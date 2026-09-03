@@ -33,7 +33,7 @@ class WestCoastRobot(commands2.TimedCommandRobot):
         pass
 
     def teleopInit(self):
-        if True:
+        if False:
             self.drivetrain.setDefaultCommand(
                 TankDrive(
                     lambda: wpimath.applyDeadband(

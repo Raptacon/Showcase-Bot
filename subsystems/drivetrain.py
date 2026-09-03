@@ -4,15 +4,15 @@ import wpilib.drive
 
 
 class WestCoastDrivetrain(commands2.SubsystemBase):
-    def __init__(self, left_motors, right_motors):
-        self.left_motors = left_motors
-        self.right_motors = right_motors
+    def __init__(self, left_motor, right_motor):
+        self.left_motor = left_motor
+        self.right_motor = right_motor
 
         # For one motor, positive value means clockwise spin while for other
         # positive value means counterclockwise spin
-        self.right_motors.setInverted(True)
+        self.right_motor.setInverted(True)
 
-        self.drive_train = wpilib.drive.DifferentialDrive(self.left_motors, self.right_motors)
+        self.drive_train = wpilib.drive.DifferentialDrive(self.left_motor, self.right_motor)
 
     def tankDrive(self, left_output_perc, right_output_perc):
         return self.drive_train.tankDrive(left_output_perc, right_output_perc)
