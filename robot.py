@@ -17,7 +17,7 @@ class WestCoastRobot(commands2.TimedCommandRobot):
 
         self.drivetrain = WestCoastDrivetrain(self.left_motor, self.right_motor)
 
-        self.driver_controller = commands2.button.CommandXboxController(0)
+        self.driver_controller = wpilib.XboxController()#commands2.button.CommandXboxController(0)
 
 
     def disabledInit(self):
@@ -71,6 +71,7 @@ class WestCoastRobot(commands2.TimedCommandRobot):
         #print(f"Current status of A button: {self.driver_controller.a()}")
 
     def testInit(self):
+        # self.driver_controller.setRumble(GenericHID.RumbleType.kLeftRumble, 1.0)
         pass
 
     def testPeriodic(self):
