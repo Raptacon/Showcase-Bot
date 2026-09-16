@@ -18,4 +18,6 @@ class WestCoastDrivetrain(commands2.SubsystemBase):
         return self.drive_train.tankDrive(left_output_perc, right_output_perc)
 
     def arcadeDrive(self, speed_perc, turn_angle_perc):
-        return self.drive_train.arcadeDrive(speed_perc, turn_angle_perc)
+        self.speed = speed_perc * .5
+        self.turn = turn_angle_perc * .5
+        return self.drive_train.arcadeDrive(self.speed, self.turn)

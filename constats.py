@@ -1,3 +1,4 @@
 class constats:
 
-    pid: tuple[float] = (0, 0, 0)
+    SPEED_LIMIT = 0.5
+    RAMP_LIMIT = 3.0

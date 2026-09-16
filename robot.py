@@ -6,6 +6,7 @@ import wpimath
 from commands.arcade_drive import ArcadeDrive
 from commands.tank_drive import TankDrive
 from subsystems.drivetrain import WestCoastDrivetrain
+from constats import constats
 
 
 class WestCoastRobot(commands2.TimedCommandRobot):
@@ -17,7 +18,7 @@ class WestCoastRobot(commands2.TimedCommandRobot):
 
         self.drivetrain = WestCoastDrivetrain(self.left_motor, self.right_motor)
 
-        self.driver_controller = wpilib.XboxController()#commands2.button.CommandXboxController(0)
+        self.driver_controller = commands2.button.CommandXboxController(0)
 
 
     def disabledInit(self):
@@ -62,6 +63,7 @@ class WestCoastRobot(commands2.TimedCommandRobot):
                         0.1,
                         1
                     ),
+                    # constats.SPEED_LIMIT,
                     self.drivetrain
                 )
             )
